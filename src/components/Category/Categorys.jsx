@@ -1,17 +1,20 @@
 import React from 'react';
 
-const Categorys = () => {
+const Categorys = ({handelCategorySelected}) => {
+    
+    const categories = ['All', 'Laptop', 'Mobile', 'Accessories','Smart watch'];
+    
     return (
         <div>
             <div className=' p-14'>
                 <div className='border border-[#acacaf] rounded-2xl pt-5 pb-5'>
                     <ul>
-                        <li className='pt-3'><button className="btn text-[#66666A] rounded-full px-10 ">Laptop</button></li>
-                        <li className='pt-3'><button className="btn text-[#66666A] rounded-full px-10">Mobile</button></li>
-                        <li className='pt-3'><button className="btn text-[#66666A] rounded-full px-10">Accessories</button></li>
-                        <li className='pt-3'><button className="btn text-[#66666A] rounded-full px-10">Samart watch</button></li>
-                        <li className='pt-3'><button className="btn text-[#66666A] rounded-full px-10">Macbook</button></li>
-
+                        
+                       {
+                        categories.map((category, index) =>(
+                            <li className='pt-3' key={index}><button className="btn text-[#66666A] rounded-full px-10 " onClick={() => handelCategorySelected(category)}> {category} </button></li>
+                        ))}
+                        
                     </ul>
                 </div>
             </div>

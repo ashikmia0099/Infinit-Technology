@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../Card/Card';
 import Categorys from '../Category/Categorys';
 import Cards from '../Cards/Cards';
 
 const CardSection = () => {
+
+
+    const [selectedCategory,setselectedCategory ] = useState('All');
+
+    const handelCategorySelected = (category) => {
+        setselectedCategory(category)
+    }
+
+
     return (
         <div >
             <div>
@@ -11,10 +20,10 @@ const CardSection = () => {
             </div>
            <div  className='grid grid-cols-4 gap-4'>
            <div className='col-span-1'>
-           <Categorys ></Categorys>
+           <Categorys handelCategorySelected={handelCategorySelected}></Categorys>
            </div>
            <div  className='col-span-3'> 
-           <Cards></Cards>
+           <Cards selectedCategory={selectedCategory}></Cards>
            </div>
            
            </div>

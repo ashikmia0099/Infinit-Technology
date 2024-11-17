@@ -12,6 +12,8 @@ import Home from './components/Home/Home.jsx';
 import Statistics from './components/Statistics/Statistics.jsx';
 import Deshboard from './components/Deshboard/Deshboard.jsx';
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
+import DeshboardCard from './components/DeshboardCard/DeshboardCard.jsx';
+import DeshboardWishlist from './components/DeshboardWishlist/DeshboardWishlist.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,13 +31,26 @@ const router = createBrowserRouter([
       },
       {
         path : '/dashboard',
-        element : <Deshboard></Deshboard>
+        element : <Deshboard></Deshboard>,
+        children : [
+          {
+            path : '/dashboard/card',
+            element : <DeshboardCard></DeshboardCard>,
+    
+          },
+          {
+            path : '/dashboard/wishlist',
+            element : <DeshboardWishlist></DeshboardWishlist>
+          }
+
+        ]
       },
       {
         path : 'products/:id',
         element : <ProductDetails></ProductDetails>,
         loader : () => fetch('/phonesData.json')
-      }
+      },
+      
     ],
     
   },
