@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FaCartShopping } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6"; 
 import { useLoaderData, useParams } from 'react-router-dom';
 import { dataContext } from '../Provider/DataProvider';
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,7 +12,7 @@ const ProductDetails = () => {
 
    
     // this is add product context api 
-    const {AddToCart} = useContext(dataContext)
+    const {AddToCart,wishList} = useContext(dataContext)
     // console.log(AddToCart)
 
     const {AddToWisthlist} = useContext(dataContext);
@@ -24,6 +25,10 @@ const ProductDetails = () => {
 
     const {image,title, price, description, specifications,rating} = product;
 
+
+    // cheack this product is in list exist
+
+    const CheckWishListItems = wishList.some(item => item.id === product.id)
 
     return (
         <div>
@@ -82,8 +87,17 @@ const ProductDetails = () => {
                                             <button onClick={() => AddToCart(product)}  className='flex items-center gap-2 px-5 py-2 bg-[#8E36D7] rounded-full' > <span className='text-lg font-bold text-white'>Add To Card</span> <span><FaCartShopping className='text-white text-lg' /></span></button>
                                             <ToastContainer />
                                         </div>
-                                        <div className='p-2 mt-2  rounded-full border border-gray'>
-                                            <button onClick={() => AddToWisthlist(product)}><FaRegHeart   className='text-2xl text-black cursor-pointer' /></button>
+                                        <div className='p-2 mt-2  '>
+                                            <button onClick={() => AddToWisthlist(product)}>
+                                                {
+                                                    CheckWishListItems ? (
+                                                        <FaHeart   className='text-2xl text-red-800 cursor-pointer' />
+                                                    ) : (
+                                                        <FaRegHeart className='text-2xl text-black cursor-pointer'></FaRegHeart>
+                                                    )
+                                                }
+                                            </button>
+                                                
                                         </div>
                                     </div>
                                 </div>

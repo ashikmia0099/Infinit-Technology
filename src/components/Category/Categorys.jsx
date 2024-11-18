@@ -2,7 +2,7 @@ import React from 'react';
 
 const Categorys = ({handelCategorySelected}) => {
     
-    const categories = ['All', 'Laptop', 'Mobile', 'Accessories','Smart watch'];
+    const categories = ['All','Mobile', 'Laptop', 'Accessories','Smart watch'];
     
     return (
         <div>

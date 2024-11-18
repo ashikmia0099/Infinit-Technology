@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Deshboard = () => {
     return (
@@ -10,12 +10,20 @@ const Deshboard = () => {
                     <p className='mx-[15%] text-lg mt-5 text-white'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
                 </div>
                 <div className='flex gap-5  justify-center mt-6'>
-                    <Link to={'/dashboard/card'}>
-                        <button class="btn  px-14 rounded-full">Cart</button>
-                    </Link>
-                    <Link to={'/dashboard/wishlist'}>
-                        <button class="btn btn-outline px-14 rounded-full">Wishlist</button>
-                    </Link>
+                    <NavLink to={'/dashboard/card'} className={({ isActive }) =>
+                    
+                    isActive ? 'btn bg-white px-14 text-[#9538E2] rounded-full text-xl font-bold' : 'btn bg-[#9538E2] px-14 rounded-full text-xl text-white font-bold'
+                    
+                    }>
+                        Cart
+                    </NavLink>
+                    <NavLink to={'/dashboard/wishlist' } className={({isActive}) =>
+                    
+                    isActive ? 'btn bg-white text-[#9538E2] px-14 rounded-full text-xl font-bold' : 'btn text-white bg-[#9538E2]  px-14 rounded-full text-xl font-bold'
+
+                    }>
+                        Wishlist
+                    </NavLink>
                 </div>
             </div>
 
@@ -27,3 +35,7 @@ const Deshboard = () => {
 };
 
 export default Deshboard;
+
+
+// <button class="btn  px-14 rounded-full text-xl font-bold">Cart</button>
+{/* <button class="btn btn-outline px-14 rounded-full text-xl font-bold">Wishlist</button> */}

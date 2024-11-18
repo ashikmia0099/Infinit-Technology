@@ -7,7 +7,7 @@ import { dataContext } from '../Provider/DataProvider';
 const DeshboardWishlist = () => {
 
 
-    const {wishList} = useContext(dataContext);
+    const { wishList } = useContext(dataContext);
 
     console.log(wishList.length)
 
@@ -17,54 +17,45 @@ const DeshboardWishlist = () => {
             <div className='flex justify-start'>
                 <h1 className='text-2xl font-bold'>WishList</h1>
             </div>
+            {
+                wishList.length === 0 ? (
+                    <p className='text-4xl font-bold my-10'>Your Wish List is Empty</p>
+                ) :
 
-            <div className=' bg-white mt-5 py-6 px-10 rounded-2xl'>
-                <div className='flex gap-10'>
-                    <div>
-                        <img src={cardimage} alt="" className='h-32 w-52 rounded-2xl' />
-                    </div>
-                    <div className='text-left'>
-                        <h1 className='text-2xl font-semibold pt-1'>Samsung Galaxy S23 Ultra</h1>
-                        <p className=' text-[#09080F99] font-medium pt-2'>Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge display.Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge display.</p>
-                        <h5 className='text-xl font-bold pt-3'>Price: $ 999.99</h5>
-                    </div>
-                    <div>
-                        <a href=""><IoCloseCircleOutline className='text-3xl text-red-800' /></a>
-                    </div>
-                </div>
-            </div>
-            <div className=' bg-white mt-5 py-6 px-10 rounded-2xl'>
-                <div className='flex gap-10'>
-                    <div>
-                        <img src={cardimage} alt="" className='h-32 w-52 rounded-2xl' />
-                    </div>
-                    <div className='text-left'>
-                        <h1 className='text-2xl font-semibold pt-1'>Samsung Galaxy S23 Ultra</h1>
-                        <p className=' text-[#09080F99] font-medium pt-2'>Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge display.Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge display.</p>
-                        <h5 className='text-xl font-bold pt-3'>Price: $ 999.99</h5>
-                    </div>
-                    <div>
-                        <a href=""><IoCloseCircleOutline className='text-3xl text-red-800' /></a>
-                    </div>
-                </div>
-            </div>
-            <div className=' bg-white mt-5 py-6 px-10 rounded-2xl'>
-                <div className='flex gap-10'>
-                    <div>
-                        <img src={cardimage} alt="" className='h-32 w-52 rounded-2xl' />
-                    </div>
-                    <div className='text-left'>
-                        <h1 className='text-2xl font-semibold pt-1'>Samsung Galaxy S23 Ultra</h1>
-                        <p className=' text-[#09080F99] font-medium pt-2'>Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge display.Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge display.</p>
-                        <h5 className='text-xl font-bold pt-3'>Price: $ 999.99</h5>
-                    </div>
-                    <div>
-                        <a href=""><IoCloseCircleOutline className='text-3xl text-red-800' /></a>
-                    </div>
-                </div>
-            </div>
+                    (
+
+                        wishList.map((product, index) => (
+                            <div key={index} >
+
+
+                                <div className=' bg-white mt-5 py-6 px-10 rounded-2xl'>
+                                    <div className='flex gap-10'>
+                                        <div>
+                                            <img src={product.image} alt="" className='h-32 w-52 rounded-2xl' />
+                                        </div>
+                                        <div className='text-left'>
+                                            <h1 className='text-2xl font-semibold pt-1'>{product.title}</h1>
+                                            <p className=' text-[#09080F99] font-medium pt-2'>{product.description}</p>
+                                            <h5 className='text-xl font-bold pt-3'>Price: $ {product.price}</h5>
+                                        </div>
+                                        <div>
+                                            <a href=""><IoCloseCircleOutline className='text-3xl text-red-800' /></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        ))
+                    )
+            }
+
         </div>
     );
 };
 
 export default DeshboardWishlist;
+
+
+
+
+

@@ -22,11 +22,24 @@ const DataProvider = ({children}) => {
 
     }
 
+    // handel total price in cart data
+
     const handeltotalPrice = () => {
         return cart.reduce((total, product) => total + product.price, 0);
     }
 
+    // wishlist data add
+
     const AddToWisthlist = (choice) => {
+
+        const CheckWishListItems = wishList.some(item => item.id === choice.id)
+
+
+        if(CheckWishListItems) {
+            toast.error('This product is already in your wishlist')
+            return;
+        }
+
 
         setWishList((prevWishList) => [...prevWishList, choice]);
         toast.success('Product successfully added to WishList.');
@@ -34,8 +47,22 @@ const DataProvider = ({children}) => {
     } 
 
 
+    const HandelCartPurches = () =>{
+        setCart([]);
+        
+    }
 
-    return <dataContext.Provider value={{cart, AddToCart,handeltotalPrice,AddToWisthlist, wishList}}> {children} </dataContext.Provider>
+
+    const SortByPriceDesending = () => {
+        const cartSorted = [...cart].sort((a,b) => b.price - a.price);
+        setCart(cartSorted);
+
+    };
+
+
+
+
+    return <dataContext.Provider value={{cart, AddToCart,handeltotalPrice,AddToWisthlist, wishList,HandelCartPurches,SortByPriceDesending}}> {children} </dataContext.Provider>
 };
 
 export default DataProvider;

@@ -15,6 +15,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 import DeshboardCard from './components/DeshboardCard/DeshboardCard.jsx';
 import DeshboardWishlist from './components/DeshboardWishlist/DeshboardWishlist.jsx';
 import DataProvider from './components/Provider/DataProvider.jsx';
+import PreOrder from './components/PreOrder/PreOrder.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
           }
 
         ]
+      },
+      {
+        path : '/preorder',
+        element : <PreOrder></PreOrder>
       },
       {
         path : 'products/:id',

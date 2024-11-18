@@ -1,13 +1,25 @@
 import React, { useContext } from 'react';
 import { BsSortNumericUp } from "react-icons/bs";
-import cardimage from '../../assets/banner.jpg'
+
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { dataContext } from '../Provider/DataProvider';
 
 const DeshboardCard = () => {
 
-    const { cart,handeltotalPrice } = useContext(dataContext);
-    console.log(cart)
+    const { cart, handeltotalPrice, HandelCartPurches, SortByPriceDesending } = useContext(dataContext);
+
+
+    const handelPurchesAndModal = () => {
+
+       
+        document.getElementById('my_modal_1').showModal();
+        HandelCartPurches();
+        
+
+
+    }
+
+
     return (
         <div className='py-10 px-[7%] bg-[#F7F7F7]'>
             <div className='flex justify-between'>
@@ -16,14 +28,16 @@ const DeshboardCard = () => {
                 </div>
                 <div className='flex items-center gap-8'>
                     <h1 className='text-2xl font-bold'>Total cost: ${handeltotalPrice()} </h1>
-                    <button class="btn btn-outline text-lg font-semibold px-12 rounded-full">Sort by Price <span className='text-2xl font-bold'><BsSortNumericUp /></span></button>
-                    <button class="btn btn-outline  text-lg font-semibold px-12 rounded-full">Purches</button>
+                    <button className="btn btn-outline text-lg font-semibold px-12 rounded-full" onClick={() => SortByPriceDesending()}>
+                        Sort by Price <span className="text-2xl font-bold"><BsSortNumericUp /></span>
+                    </button>
+                    <button onClick={() => handelPurchesAndModal()} class="btn btn-outline  text-lg font-semibold px-12 rounded-full">Purches</button>
                 </div>
             </div>
 
             {
                 cart.length === 0 ? (
-                    <p>Your cart is Empty</p>
+                    <p className='text-5xl font-bold my-20'>Your cart is Empty</p>
                 ) : (
                     cart.map((product, index) => (
 
@@ -48,7 +62,20 @@ const DeshboardCard = () => {
                 )
             }
 
-            <h1> {cart.lenght} </h1>
+            {/* modal show */}
+            
+            <dialog id="my_modal_1" className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-2xl border-b border-gray pb-2">Payment Successfully</h3>
+                    <p>Thanks for purchasing.</p>
+                    
+                    <div className="modal-action">
+                        <form method="dialog">
+                            <button className="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
 
         </div>
     );

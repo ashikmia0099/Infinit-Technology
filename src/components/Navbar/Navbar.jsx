@@ -15,7 +15,7 @@ const Navbar = () => {
     const links = (
         <>
 
-        <li>
+        <li >
             <NavLink to='/' className={({isActive}) =>
             isActive ? 'text-white text-lg font-semibold border-b-4 border-indigo-500' : 'text-black text-lg font-semibold'
             
@@ -23,15 +23,21 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink to="/statistics" className={({isActive}) =>
-            isActive ? 'text-white text-lg font-semibold border-b-4 border-indigo-500' : 'text-black text-lg font-semibold'
+            isActive ? 'text-[#9538E2] text-lg font-semibold border-b-4 border-indigo-500' : 'text-black text-lg font-semibold'
             
             }>Statistics</NavLink>
         </li>
         <li>
             <NavLink to="/dashboard" className={({isActive}) =>
-            isActive ? 'text-white text-lg font-semibold border-b-4 border-indigo-500' : 'text-black text-lg font-semibold'
+            isActive ? 'text-[#9538E2] text-lg font-semibold border-b-4 border-indigo-500' : 'text-black text-lg font-semibold'
             
             }>Dashboard</NavLink>
+        </li>
+        <li>
+            <NavLink to='/preorder' className={({isActive}) =>
+            isActive ? 'text-[#9538E2] text-lg font-semibold border-b-4 border-indigo-500' : 'text-black text-lg font-semibold'
+            
+            }>Pre Order</NavLink>
         </li>
         
         
@@ -43,7 +49,7 @@ const Navbar = () => {
 
     return (
         
-            <div className="navbar sticky top-0 ">
+            <div className="navbar sticky top-0 z-40 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -75,9 +81,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-9 px-5">
-                   <p className='text-xl p-1 bg-white text-black rounded-full'><CiHeart /> {cart.length} </p>
-                   <p className='text-xl p-1 bg-white text-black rounded-full'><IoCartSharp /> {wishList.length} </p>
-                    
+                   <div className='flex'>
+                    <p className='text-2xl p-1 bg-white text-black rounded-full'><CiHeart /> </p>
+                    <p className='font-semibold -mt-2 text-lg'> {cart.length}</p>
+                   </div>
+                  <div className='flex'>
+                  <p className='text-2xl p-1 bg-white text-black rounded-full'><IoCartSharp /></p>
+                  <p className='font-semibold -mt-2 text-lg'> {wishList.length}</p>
+                  </div>
                 </div>
             </div>
             
