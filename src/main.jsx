@@ -14,6 +14,7 @@ import Deshboard from './components/Deshboard/Deshboard.jsx';
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 import DeshboardCard from './components/DeshboardCard/DeshboardCard.jsx';
 import DeshboardWishlist from './components/DeshboardWishlist/DeshboardWishlist.jsx';
+import DataProvider from './components/Provider/DataProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <DataProvider>
     <RouterProvider router={router} />
+    </DataProvider>
   </StrictMode>,
 )

@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BsSortNumericUp } from "react-icons/bs";
 import cardimage from '../../assets/banner.jpg'
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { dataContext } from '../Provider/DataProvider';
 
 const DeshboardWishlist = () => {
+
+
+    const {wishList} = useContext(dataContext);
+
+    console.log(wishList.length)
+
+
     return (
         <div className='py-10 px-[7%] bg-[#F7F7F7]'>
             <div className='flex justify-start'>

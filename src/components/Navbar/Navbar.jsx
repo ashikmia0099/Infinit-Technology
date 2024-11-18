@@ -1,21 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import { CiHeart } from "react-icons/ci";
 import { IoCartSharp } from "react-icons/io5";
+import { dataContext } from '../Provider/DataProvider';
 
 const Navbar = () => {
 
 
-    // const links = (
-    //     <>
+    const {cart,wishList} =useContext(dataContext);
 
-    //         <li><NavLink to="/" className='text-white text-lg font-semibold'>Home</NavLink></li>
-    //         <li><NavLink to="/statistics" className='text-white text-lg font-semibold'>Statistics</NavLink></li>
-    //         <li><NavLink to="/dashboard" className='text-white text-lg font-semibold'>Dashboard</NavLink></li>
-
-    //     </>
-    // );
+    console.log(cart)
 
     const links = (
         <>
@@ -80,8 +75,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-9 px-5">
-                   <p className='text-xl p-1 bg-white text-black rounded-full'><CiHeart /></p>
-                   <p className='text-xl p-1 bg-white text-black rounded-full'><IoCartSharp /></p>
+                   <p className='text-xl p-1 bg-white text-black rounded-full'><CiHeart /> {cart.length} </p>
+                   <p className='text-xl p-1 bg-white text-black rounded-full'><IoCartSharp /> {wishList.length} </p>
                     
                 </div>
             </div>

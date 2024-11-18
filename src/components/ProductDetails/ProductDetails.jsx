@@ -1,26 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaCartShopping } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { useLoaderData, useParams } from 'react-router-dom';
-
+import { dataContext } from '../Provider/DataProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDetails = () => {
 
 
-    // "id": 16,
-    //   "category": "Smart Watch",
-    //   "title": "Samsung Galaxy Watch 5",
-    //   "price": 299,
-    //   "image": "https://i.ibb.co.com/StPDGzD/smart2.webp",
-    //   "description": "Samsung Galaxy Watch 5 is a perfect blend of style and functionality. Its 1.4-inch AMOLED display offers sharp visuals, while the BioActive Sensor ensures comprehensive health tracking. With GPS and 5 ATM water resistance, it’s built for all adventures.",
-    //   "specifications": [
-    //     "1.4-inch AMOLED",
-    //     "BioActive Sensor",
-    //     "GPS Tracking",
-    //     "5 ATM Water Resistance",
-    //     "Wear OS 3.5"
-    //   ],
-    //   "rating": 4.6
+   
+    // this is add product context api 
+    const {AddToCart} = useContext(dataContext)
+    // console.log(AddToCart)
+
+    const {AddToWisthlist} = useContext(dataContext);
+    console.log(AddToWisthlist)
 
     const {id} = useParams();
     const data = useLoaderData();
@@ -84,10 +79,11 @@ const ProductDetails = () => {
                                     </div>
                                     <div className='flex items-center gap-4'>
                                         <div className='mt-3'>
-                                            <button className='flex items-center gap-2 px-5 py-2 bg-[#8E36D7] rounded-full' > <span className='text-lg font-bold text-white'>Add To Card</span> <span><FaCartShopping className='text-white text-lg' /></span></button>
+                                            <button onClick={() => AddToCart(product)}  className='flex items-center gap-2 px-5 py-2 bg-[#8E36D7] rounded-full' > <span className='text-lg font-bold text-white'>Add To Card</span> <span><FaCartShopping className='text-white text-lg' /></span></button>
+                                            <ToastContainer />
                                         </div>
                                         <div className='p-2 mt-2  rounded-full border border-gray'>
-                                            <FaRegHeart className='text-2xl text-black ' />
+                                            <button onClick={() => AddToWisthlist(product)}><FaRegHeart   className='text-2xl text-black cursor-pointer' /></button>
                                         </div>
                                     </div>
                                 </div>
