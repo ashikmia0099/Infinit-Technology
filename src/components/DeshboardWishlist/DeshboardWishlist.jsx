@@ -13,8 +13,8 @@ const DeshboardWishlist = () => {
 
 
     return (
-        <div className='py-10 px-[7%] bg-[#F7F7F7]'>
-            <div className='flex justify-start'>
+        <div className='py-10 md:px-[7%] bg-[#F7F7F7]'>
+            <div className='flex lg:justify-start'>
                 <h1 className='text-2xl font-bold'>WishList</h1>
             </div>
             {
@@ -29,7 +29,7 @@ const DeshboardWishlist = () => {
 
 
                                 <div className=' bg-white mt-5 py-6 px-10 rounded-2xl'>
-                                    <div className='flex gap-10'>
+                                    <div className='md:flex gap-10'>
                                         <div>
                                             <img src={product.image} alt="" className='h-32 w-52 rounded-2xl' />
                                         </div>

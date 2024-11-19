@@ -21,17 +21,17 @@ const DeshboardCard = () => {
 
 
     return (
-        <div className='py-10 px-[7%] bg-[#F7F7F7]'>
-            <div className='flex justify-between'>
+        <div className='py-10 md:px-[7%] bg-[#F7F7F7]'>
+            <div className='md:flex md:justify-between'>
                 <div>
                     <h1 className='text-2xl font-bold'>Cart</h1>
                 </div>
-                <div className='flex items-center gap-8'>
+                <div className='md:flex items-center  gap-8'>
                     <h1 className='text-2xl font-bold'>Total cost: ${handeltotalPrice()} </h1>
-                    <button className="btn btn-outline text-lg font-semibold px-12 rounded-full" onClick={() => SortByPriceDesending()}>
+                    <button className="btn btn-outline text-lg font-semibold px-12 rounded-full my-2" onClick={() => SortByPriceDesending()}>
                         Sort by Price <span className="text-2xl font-bold"><BsSortNumericUp /></span>
                     </button>
-                    <button onClick={() => handelPurchesAndModal()} class="btn btn-outline  text-lg font-semibold px-12 rounded-full">Purches</button>
+                    <button onClick={() => handelPurchesAndModal()} class="btn btn-outline   my-2 text-lg font-semibold px-12 rounded-full">Purches</button>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@ const DeshboardCard = () => {
 
 
                         <div key={index} className=' bg-white mt-5 py-6 px-10 rounded-2xl'>
-                            <div className='flex gap-10'>
+                            <div className='md:flex gap-10'>
                                 <div>
                                     <img src={product.image} alt="" className='h-32 w-52 rounded-2xl' />
                                 </div>

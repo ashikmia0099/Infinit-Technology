@@ -38,13 +38,13 @@ const ProductDetails = () => {
                     <p className='mt-2 mx-[15%] text-white'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
                 </div>
                 <div className=' pb-32'>
-                    <div className='mx-[10%] text-start '>
-                        <div className="hero bg-white rounded-3xl p-7 -mt-[20%]">
+                    <div className='md:mx-[10%] text-start '>
+                        <div className="hero bg-white md:rounded-3xl p-7 md:-mt-[20%]">
                             <div className="hero-content flex-col lg:flex-row ">
                                 <img
                                     src={image}
-                                    className="max-w-sm h-full rounded-lg shadow-2xl" />
-                                <div className='px-14'>
+                                    className="lg:max-w-sm h-full rounded-lg shadow-2xl" />
+                                <div className='md:px-14'>
                                     <h1 className="text-3xl font-bold">{title} </h1>
                                     <h5 className='text-xl font-semibold'>Price : $ {price} </h5>
                                     <button class="btn btn-outline bg-[#EAF5E6] btn-success rounded-full px-8 mt-3">In Stock</button>
@@ -84,7 +84,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className='flex items-center gap-4'>
                                         <div className='mt-3'>
-                                            <button onClick={() => AddToCart(product)}  className='flex items-center gap-2 px-5 py-2 bg-[#8E36D7] rounded-full' > <span className='text-lg font-bold text-white'>Add To Card</span> <span><FaCartShopping className='text-white text-lg' /></span></button>
+                                            <button onClick={() => AddToCart(product)}  className='flex items-center gap-2 px-5 py-2 bg-[#8E36D7] rounded-full' > <span className='md:text-lg font-bold text-white'>Add To Card</span> <span><FaCartShopping className='text-white text-lg' /></span></button>
                                             <ToastContainer />
                                         </div>
                                         <div className='p-2 mt-2  '>

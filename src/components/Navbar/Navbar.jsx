@@ -72,7 +72,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl font-semibold text-white" >InFinity </a>
+                    <a className="btn btn-ghost text-2xl font-semibold text-black" >InFinity </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

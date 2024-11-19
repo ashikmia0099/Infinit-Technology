@@ -7,7 +7,7 @@ const PreOrder = () => {
                 <h1 className='text-3xl font-bold pt-10'>Looking For Something Different ??</h1>
                 <p className='text-xl font-semibold pt-5'>Put Your Information in The Box...</p>
             </div>
-            <div className='mx-[30%] mt-10 text-left mb-10'>
+            <div className='md:mx-[30%] mt-10 text-left mb-10'>
                 <span className="label-text text-xl font-semibold "> Product Information</span>
                 <label className="input input-bordered flex items-center gap-2 my-2">
                     <input type="text" className="grow" placeholder="Enter Product Name/URL" />
@@ -44,9 +44,7 @@ const PreOrder = () => {
                 <button class="btn btn-neutral text-xl font-semibold px-16 rounded-full">Submit</button>
             </div>
 
-            <div className='justify-center mx-[27%] mb-10'>
-            <iframe className='rounded-2xl' width="560" height="315" src="https://www.youtube.com/embed/b_CBIgjrQeQ?si=DonH_E1WfS8Z33BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+            
            
         </div>
     );

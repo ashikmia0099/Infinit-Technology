@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <div className='-mt-16 '>
       <div className='bg-[#9538E2] pb-60 pt-20 rounded-2xl'>
-        <h1 className='text-6xl font-semibold	 text-white w-[80%] mx-auto'>Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
+        <h1 className='text-6xl font-semibold	 text-white lg:w-[80%] mx-auto'>Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
         <p className='mt-10 text-white  text-center mx-[20%]'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
         <button class="btn text-[#9538E2] text-lg font-bold rounded-full mt-7 ">Shop Now</button>
       </div>
