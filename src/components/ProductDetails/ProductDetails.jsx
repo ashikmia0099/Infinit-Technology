@@ -6,6 +6,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { dataContext } from '../Provider/DataProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const ProductDetails = () => {
 
@@ -13,11 +14,9 @@ const ProductDetails = () => {
    
     // this is add product context api 
     const {AddToCart,wishList} = useContext(dataContext)
-    // console.log(AddToCart)
-
+    
     const {AddToWisthlist} = useContext(dataContext);
-    console.log(AddToWisthlist)
-
+    
     const {id} = useParams();
     const data = useLoaderData();
     const productid = parseInt(id);
@@ -32,6 +31,10 @@ const ProductDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Product Details | InFinity</title>
+                <meta name="description" content="Welcome to the Home page of My App." />
+            </Helmet>
             <div className='bg-[#ECECEC]'>
                 <div className='bg-[#9538E2] pb-60'>
                     <h1 className='text-4xl font-bold pt-6 text-white'>Product Details</h1>

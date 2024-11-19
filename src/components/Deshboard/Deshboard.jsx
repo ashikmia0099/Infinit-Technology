@@ -1,9 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Deshboard = () => {
     return (
         <div>
+            <Helmet>
+                <title>Deshboard | InFinity</title>
+                <meta name="description" content="Welcome to the Home page of My App." />
+            </Helmet>
             <div className='bg-[#9538E2] py-7'>
                 <div>
                     <h1 className=' text-3xl font-bold text-white'>Dashboard</h1>
@@ -35,7 +40,3 @@ const Deshboard = () => {
 };
 
 export default Deshboard;
-
-
-// <button class="btn  px-14 rounded-full text-xl font-bold">Cart</button>
-{/* <button class="btn btn-outline px-14 rounded-full text-xl font-bold">Wishlist</button> */}

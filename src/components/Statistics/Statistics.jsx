@@ -1,11 +1,14 @@
 import React from 'react';
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
+import { Helmet } from 'react-helmet';
+
+
 const Statistics = () => {
 
 
-    const data =    [
-            {
+    const data = [
+        {
             "id": 1,
             "category": "Laptop",
             "title": "Dell Inspiron 15",
@@ -20,8 +23,8 @@ const Statistics = () => {
                 "Windows 11"
             ],
             "rating": 4.5
-            },
-            {
+        },
+        {
             "id": 2,
             "category": "Laptop",
             "title": "MSI Gaming Laptop",
@@ -36,8 +39,8 @@ const Statistics = () => {
                 "macOS Ventura"
             ],
             "rating": 4.8
-            },
-            {
+        },
+        {
             "id": 3,
             "category": "Laptop",
             "title": "HP 14' inch Laptop",
@@ -52,8 +55,8 @@ const Statistics = () => {
                 "macOS Ventura"
             ],
             "rating": 4.8
-            },
-            {
+        },
+        {
             "id": 4,
             "category": "Laptop",
             "title": "MacBook Pro M2 Max",
@@ -68,8 +71,8 @@ const Statistics = () => {
                 "macOS Ventura"
             ],
             "rating": 4.8
-            },
-            {
+        },
+        {
             "id": 5,
             "category": "Mobile",
             "title": "Oppo F30 Pro",
@@ -84,8 +87,8 @@ const Statistics = () => {
                 "iOS 17"
             ],
             "rating": 4.7
-            },
-            {
+        },
+        {
             "id": 6,
             "category": "Mobile",
             "title": "Oppo Note 10",
@@ -100,8 +103,8 @@ const Statistics = () => {
                 "Android 13"
             ],
             "rating": 4.6
-            },
-            {
+        },
+        {
             "id": 7,
             "category": "Mobile",
             "title": "iPhone 16 Pro Max",
@@ -116,8 +119,8 @@ const Statistics = () => {
                 "iOS 17"
             ],
             "rating": 4.7
-            },
-            {
+        },
+        {
             "id": 8,
             "category": "Mobile",
             "title": "Samsung Galaxy S23 All",
@@ -132,8 +135,8 @@ const Statistics = () => {
                 "Android 13"
             ],
             "rating": 4.6
-            },
-            {
+        },
+        {
             "id": 9,
             "category": "Mobile",
             "title": "Huawei P60 Pro",
@@ -148,8 +151,8 @@ const Statistics = () => {
                 "iOS 17"
             ],
             "rating": 4.7
-            },
-            {
+        },
+        {
             "id": 10,
             "category": "Mobile",
             "title": "Huawei Tri Fold",
@@ -164,15 +167,19 @@ const Statistics = () => {
                 "Android 13"
             ],
             "rating": 4.6
-            },
-          
-        
-            
-        ]
-      
+        },
+
+
+
+    ]
+
 
     return (
         <div className='my-16'>
+            <Helmet>
+                <title>Statistics | InFinity</title>
+                <meta name="description" content="Welcome to the Home page of My App." />
+            </Helmet>
             <div style={{ width: '100%', height: 300 }}>
                 <ResponsiveContainer>
                     <BarChart data={data}>

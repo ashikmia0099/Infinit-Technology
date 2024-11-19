@@ -16,6 +16,8 @@ import DeshboardCard from './components/DeshboardCard/DeshboardCard.jsx';
 import DeshboardWishlist from './components/DeshboardWishlist/DeshboardWishlist.jsx';
 import DataProvider from './components/Provider/DataProvider.jsx';
 import PreOrder from './components/PreOrder/PreOrder.jsx';
+import React from "react";
+import {Helmet} from "react-helmet";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +66,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+     
     <DataProvider>
     <RouterProvider router={router} />
     </DataProvider>

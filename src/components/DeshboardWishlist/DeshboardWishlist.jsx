@@ -3,6 +3,7 @@ import { BsSortNumericUp } from "react-icons/bs";
 import cardimage from '../../assets/banner.jpg'
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { dataContext } from '../Provider/DataProvider';
+import { Helmet } from 'react-helmet';
 
 const DeshboardWishlist = () => {
 
@@ -14,6 +15,10 @@ const DeshboardWishlist = () => {
 
     return (
         <div className='py-10 md:px-[7%] bg-[#F7F7F7]'>
+            <Helmet>
+                <title>Wishlist | InFinity</title>
+                <meta name="description" content="Welcome to the Home page of My App." />
+            </Helmet>
             <div className='flex lg:justify-start'>
                 <h1 className='text-2xl font-bold'>WishList</h1>
             </div>

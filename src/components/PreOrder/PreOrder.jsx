@@ -1,8 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const PreOrder = () => {
     return (
         <div>
+            <Helmet>
+                <title>Pre Order | InFinity</title>
+                <meta name="description" content="Welcome to the Home page of My App." />
+            </Helmet>
             <div>
                 <h1 className='text-3xl font-bold pt-10'>Looking For Something Different ??</h1>
                 <p className='text-xl font-semibold pt-5'>Put Your Information in The Box...</p>

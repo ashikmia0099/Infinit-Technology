@@ -3,6 +3,8 @@ import { BsSortNumericUp } from "react-icons/bs";
 
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { dataContext } from '../Provider/DataProvider';
+import { NavLink } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const DeshboardCard = () => {
 
@@ -22,6 +24,10 @@ const DeshboardCard = () => {
 
     return (
         <div className='py-10 md:px-[7%] bg-[#F7F7F7]'>
+            <Helmet>
+                <title>Cart | InFinity</title>
+                <meta name="description" content="Welcome to the Home page of My App." />
+            </Helmet>
             <div className='md:flex md:justify-between'>
                 <div>
                     <h1 className='text-2xl font-bold'>Cart</h1>
@@ -71,7 +77,7 @@ const DeshboardCard = () => {
                     
                     <div className="modal-action">
                         <form method="dialog">
-                            <button className="btn">Close</button>
+                            <NavLink to='/'><button className="btn">Close</button></NavLink>
                         </form>
                     </div>
                 </div>
